@@ -137,3 +137,51 @@ let student2 = new WebDevStudent("Marta", 17, "GreatestMoviesLab", 10000);
 console.log("student2:", student2);
 student2.drawDice();
 student2.hackWindows();
+console.clear();
+
+class Hangman {
+  constructor() {
+    this.lives = 1;
+  }
+
+  gameOver() {
+    console.log("Booo, you lost");
+  }
+
+  failedLetter() {
+    this.lives--;
+    if (this.lives <= 0) {
+      this.gameOver();
+    }
+  }
+}
+
+class GameGoal {
+  constructor(word) {
+    this.word = word;
+  }
+
+  guess(letter) {
+    if (this.word.includes(letter)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+class Game {
+  constructor(word) {
+    this.word = new GameGoal(word);
+    this.hangman = new Hangman();
+  }
+}
+
+const boardGame = new Game("javascript");
+
+console.log("boardGame:", boardGame);
+
+if (boardGame.word.guess("e")) {
+} else {
+  boardGame.hangman.failedLetter();
+}
