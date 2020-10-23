@@ -1,5 +1,3 @@
-console.log("Hello");
-
 const board = [
   100,
   -10,
