@@ -270,20 +270,18 @@ class Ironhacker extends WebDevStudent {
 class WebDevRemoteClass {
   constructor() {
     this.room = [
-      new Ironhacker("querien", "Greatest Movie Lab"),
+      new Ironhacker("franck", "Greatest Movie Lab"),
       new Ironhacker("alex", "Greatest Movie Lab"),
       new Ironhacker("gosia", "Greatest Movie Lab"),
     ];
   }
 }
+const ourClass = new WebDevRemoteClass();
+console.log("ourClass:", ourClass);
+ourClass.room.forEach((element) => element.screamYolo());
 
 const querien = new Ironhacker("Querien", "Greatest Movie Lab");
 
 function returnsTrue() {
   return true;
 }
-
-const ourClass = new WebDevRemoteClass();
-console.log("ourClass:", ourClass);
-
-ourClass.room.forEach((element) => element.screamYolo());
